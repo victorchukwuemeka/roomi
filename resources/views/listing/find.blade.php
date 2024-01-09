@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-
-<main class="container mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg">
+<main class="container mx-auto mt-2 p-4 bg-white rounded-lg shadow-lg">
 
     <h1 class="text-3xl text-gray-800 font-semibold mb-6">Find Roommates</h1>
 
@@ -50,8 +49,9 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         @foreach($viewData['listings'] as $listing)
             <div class="bg-white p-4 shadow-lg rounded-lg">
-                <img src="{{ asset('/storage/' . $listing->get_image()) }}"
-                alt="Listing Image" class="w-full h-48 object-cover rounded-t-lg">
+              <video width="320" height="240" class="w-full h-48 object-cover rounded-t-lg" controls>
+                <source src="{{ asset('storage/' .$listing->get_video()) }}" type="video/mp4">
+              </video>
                 <div class="p-4">
                     <h2 class="text-xl font-semibold">
                       {{ $listing->get_title() }}

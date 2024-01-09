@@ -60,12 +60,12 @@ class Listing extends Model
       $this->attributes['description'] = $description;
     }
 
-    public function get_image(){
-      return $this->attributes['image'];
+    public function get_video(){
+      return $this->attributes['video'];
     }
 
-    public function set_image($image){
-      $this->attributes['image'] = $image;
+    public function set_video($video){
+      $this->attributes['video'] = $video;
     }
 
     public function user(){

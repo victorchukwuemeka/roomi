@@ -41,12 +41,12 @@ class ListingController extends Controller
     $listing->set_description($request->input('description'));
     $time = time();
 
-     if ($request->hasFile('image')) {
-              $image_file_name = $time.".".$request->file('image')->extension();
+     if ($request->hasFile('video')) {
+              $video_file_name = $time.".".$request->file('video')->extension();
               Storage::disk('public')->put(
-                $image_file_name, file_get_contents($request->file('image')->getRealPath())
+                $video_file_name, file_get_contents($request->file('video')->getRealPath())
               );
-              $listing->set_image($image_file_name);
+              $listing->set_video($video_file_name);
               $listing->save();
       }
 

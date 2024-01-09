@@ -11,7 +11,9 @@ class MessageController extends Controller
 {
     public function index($id){
       $user = User::find($id);
-
+      //dd($user->get_id());
+      //$user_in_session = Auth::id();
+      //dd($user_in_session);
       $messages = Message::all();
       $viewData = [];
       $viewData['messages'] = $messages;
@@ -22,18 +24,17 @@ class MessageController extends Controller
     }
 
 
+
     public function store(Request $request){
       $user_id_in_session = Auth::id();
       $message = new Message();
-       
+
       $message->set_sender_id($user_id_in_session);
       $message->set_receiver_id($request->input('receiver_id'));
       $message->set_message_content($request->input('message_content'));
       $message->save();
       $id = $request->input('receiver_id');
 
-      //return back();
-      //return redirect()->route('messages.store');
-      return $this->index($request->input('receiver_id'));
+      return redirect()->route('chat', ['id' => $id]);
     }
 }
