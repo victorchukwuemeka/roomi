@@ -27,7 +27,7 @@
 
     <!-- Scripts -->
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+   
 
 </head>
 <body class="font-sans bg-gray-100">
