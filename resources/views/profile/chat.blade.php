@@ -1,58 +1,80 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Chat with Tailwind</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-@section('content')
-<div class="container mx-auto p-4">
-    <div class="flex">
-        <div class="w-1/4 bg-gray-200 p-4 rounded-l-lg">
-            <!-- Sidebar with user list -->
-            <h2 class="text-xl font-semibold mb-4">Chats</h2>
-            <!-- User list (add your logic to populate users) -->
-            <ul>
-              <a href="{{ url('/profile/'.$viewData['user_id'])}}">
-                <li class="mb-2 p-2 rounded hover:bg-gray-300 cursor-pointer">
-                    <div class="flex items-center">
-                        <img src="{{ asset('/storage/'.$viewData['user']->get_profile_image()) }}" alt="User Avatar" class="w-8 h-8 rounded-full">
-                        <span class="ml-2"> {{ $viewData['user']->name }}</span>
-                    </div>
-                </li>
-              </a>
-                <!-- Repeat for more users -->
-            </ul>
-        </div>
-        <div class="w-3/4 bg-white p-4 rounded-r-lg">
-            <!-- Chat interface -->
-            <div class="bg-gray-100 p-4 rounded-lg h-96 overflow-y-scroll">
-                <!-- Chat messages -->
-                @foreach($viewData['messages']  as $message)
+    <!-- Chat Container -->
+    <div class="container mx-auto p-6">
+        <!-- Chat Messages -->
+        <div class="border rounded-lg p-4 mb-4 bg-white">
+          @foreach($viewData['messages'] as $message)
+            @php
+              $isSender = $message->sender_id == auth()->id();
+            @endphp
+            @if($isSender)
 
-                 @if($message->sender_id == $viewData['user_id_in_session'])
-                    <div class="{{ $message->sender_id === auth()->id() ? 'text-right' : 'text-left' }} mb-2">
-                        <div class="bg-blue-500 text-white p-2 rounded-lg inline-block max-w-xs">
-                            <p>{{ $message->message_content }}</p>
-                        </div>
-                    </div>
-
-                  @endif
-                  @if($message->receiver_id  == $viewData['user_id_in_session'])
-                   <div class="{{ $message->sender_id === auth()->id() ? 'text-right' : 'text-left' }} mb-2">
-                       <div class="bg-blue-500 text-white p-2 rounded-lg inline-block max-w-xs">
-                           <p>{{ $message->message_content }}</p>
-                       </div>
-                   </div>
-                  @endif
-                @endforeach
-            </div>
-            <!-- Message input form -->
-            <form action="{{ route('messages.store') }}" method="POST">
-                @csrf
-                <div class="flex">
-                    <input type="text" name="message_content" class="flex-1 p-2 border rounded-l-lg"
-                     placeholder="Type your message...">
-                    <input type="hidden" name="receiver_id" value="{{ $viewData['user_id'] }}">
-                    <button type="submit" class="bg-blue-500 text-white p-2 rounded-r-lg">Send</button>
+            <div class="text-right mb-2">
+              <div class="flex items-center justify-end">
+                <div class="ml-3 text-right flex-grow">
+                  <p class="text-gray-600 font-semibold">{{ $message->sender->name}}</p>
+                  <p class="bg-green-200 rounded-lg p-2 text-sm">{{ $message->message_content }}</p>
                 </div>
-            </form>
+                @if($message->sender->get_profile_image())
+                <div class="flex-shrink-0">
+                    <img class="h-8 w-8 rounded-full" src="{{asset('/storage/'.$message->sender->get_profile_image())}}" alt="User Avatar">
+                </div>
+                @else
+                <div class="flex-shrink-0">
+                    <img class="h-8 w-8 rounded-full" src="{{asset('pig.jpg')}}" alt="User Avatar">
+                </div>
+                @endif
+             </div>
+          </div>
+          @else
+          <div class="text-left mb-2">
+            <div class="flex items-start">
+               @if($viewData['user']->get_profile_image())
+                <div class="flex-shrink-0">
+                    <img class="h-8 w-8 rounded-full" src="{{ asset('/storage/'. $viewData['user']->get_profile_image()) }}" alt="User Avatar">
+                </div>
+               @else
+               <div class="flex-shrink-0">
+                   <img class="h-8 w-8 rounded-full" src="{{ asset('pig.jpg')}}" alt="User Avatar">
+               </div>
+               @endif
+                <div class="ml-3">
+                  <p class="text-xs text-gray-600 font-semibold">{{$viewData['user']->name}} </p>
+                  <p class="bg-blue-200 rounded-lg p-2 text-sm">{{ $message->message_content }}</p>
+                </div>
+            </div>
+         </div>
+         @endif
+         @endforeach
+
         </div>
+
+        <!-- Reply Bar -->
+        <form action="{{ route('messages.store') }}" method="POST">
+          @csrf
+          <div class="flex flex-col md:flex-row items-center bg-gray-200 p-4 rounded-lg">
+              <!-- Input Field -->
+              <input type="text" name="message_content" placeholder="Type your message..."
+              class="flex-grow p-2 border rounded-md focus:outline-none focus:ring focus:border-blue-300">
+              <input type="hidden" name="receiver_id" value="{{ $viewData['user_id'] }}">
+              <!-- Send Button -->
+              <button class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                  <i class="fas fa-paper-plane"></i> Send
+              </button>
+          </div>
+        </form>
+
     </div>
-</div>
-@endsection
+
+</body>
+</html>

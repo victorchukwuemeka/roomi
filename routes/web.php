@@ -20,6 +20,9 @@ Route::get('/', function () {
     return view('dashboard');
 });
 
+Route::get('/hhh', [MessageController::class, 'hhh']);
+
+
 Route::get('/profileo', function(){
   return view('profile');
 });
@@ -36,11 +39,16 @@ Route::post('/chat', [MessageController::class, 'store'])->name('messages.store'
 
 
 Route::middleware('auth')->group(function () {
-    Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile.index');
-    Route::get('/profile_edit', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile_update/{user}', [ProfileController::class, 'added'])->name('profile.update');
-    Route::delete('/profile_destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
+  Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile.index');
+  Route::get('/profile_edit', [ProfileController::class, 'edit'])->name('profile.edit');
+  Route::patch('/profile_update/{user}', [ProfileController::class, 'added'])->name('profile.update');
+  Route::delete('/profile_destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
 });
+
+
+
+
 
 
 

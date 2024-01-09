@@ -21,7 +21,7 @@
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
                     <text x="50%" y="50%" font-family="Segoe UI, sans-serif" font-size="40" fill="#3B82F6"
                         text-anchor="middle" alignment-baseline="middle" font-weight="bold">
-                         {{ __("roomi")}}
+                         {{ __("ruumi")}}
                    </text>
                   </svg>
                 </a>

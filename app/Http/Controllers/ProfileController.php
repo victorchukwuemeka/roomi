@@ -54,6 +54,7 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
+        //dd($request);
         $request->user()->fill($request->validated());
 
         if ($request->user()->isDirty('email')) {
@@ -65,6 +66,7 @@ class ProfileController extends Controller
     }
 
     public function added(Request $request, User $user){
+      //dd($request);
       $time = time();
       if ($request->hasFile('profile_image')) {
           $profile_image_name = $time.".".$request->file('profile_image')->extension();
@@ -76,15 +78,15 @@ class ProfileController extends Controller
           $user->save();
       }
 
-      $validated = $request->validate([
+      /*$validated = $request->validate([
         'name' => 'required|max:255',
         'location' => 'required',
         'occupation' => 'required',
         'description' => 'required',
         'about_me'   => 'required',
         'religion' => 'required|max:255',
-        'gender' => 'required',        
-      ]);
+        'gender' => 'required',
+      ]);*/
 
       $user->update($request->all());
       return redirect()->route('profile.edit')->with('success', 'user updated successfully');

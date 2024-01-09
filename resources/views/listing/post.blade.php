@@ -34,8 +34,8 @@
 
         <!-- Image Upload -->
         <div class="space-y-1">
-            <label for="image" class="text-sm text-gray-600">Upload an Image</label>
-            <input type="file" id="image" name="image" accept="image/*" class="w-full p-2 border">
+            <label for="video" class="text-sm text-gray-600">Upload Your Video</label>
+            <input type="file" id="video" name="video" accept="videos/*" class="w-full p-2 border">
         </div>
 
         <!-- Submit Button -->
