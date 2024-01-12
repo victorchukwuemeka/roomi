@@ -42,6 +42,7 @@ class ListingController extends Controller
     $time = time();
 
      if ($request->hasFile('video')) {
+              dd('vic');
               $video_file_name = $time.".".$request->file('video')->extension();
               Storage::disk('public')->put(
                 $video_file_name, file_get_contents($request->file('video')->getRealPath())
