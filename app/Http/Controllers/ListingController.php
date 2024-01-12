@@ -40,7 +40,7 @@ class ListingController extends Controller
     $listing->set_rent($request->input('rent'));
     $listing->set_description($request->input('description'));
     $time = time();
-
+     dd('vic');
      if ($request->hasFile('video')) {
               dd('vic');
               $video_file_name = $time.".".$request->file('video')->extension();
