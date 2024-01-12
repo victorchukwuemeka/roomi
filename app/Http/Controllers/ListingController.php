@@ -39,12 +39,12 @@ class ListingController extends Controller
     $listing->set_location($request->input('location'));
     $listing->set_rent($request->input('rent'));
     $listing->set_description($request->input('description'));
-    dd($request->file('video'));
+    //dd($request->file('video'));
 
     $time = time();
 
      if ($request->hasFile('video')) {
-              dd('vic');
+              //dd('vic');
               $video_file_name = $time.".".$request->file('video')->extension();
               Storage::disk('public')->put(
                 $video_file_name, file_get_contents($request->file('video')->getRealPath())
