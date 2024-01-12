@@ -27,7 +27,7 @@ class ListingController extends Controller
     public function store(Request $request){
 
     ini_set('max_execution_time', 300);
-    //dd($request);
+    dd($request->all());
     //Listing::validate($request);
     $listing  = new Listing();
     $user_id = $user_id_in_session = Auth::id();
