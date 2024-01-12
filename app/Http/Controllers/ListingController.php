@@ -27,7 +27,7 @@ class ListingController extends Controller
     public function store(Request $request){
 
 
-    //dd($request);
+    dd($request);
     Listing::validate($request);
     $listing  = new Listing();
     $user_id = $user_id_in_session = Auth::id();
