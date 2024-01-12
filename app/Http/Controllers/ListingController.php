@@ -39,6 +39,8 @@ class ListingController extends Controller
     $listing->set_location($request->input('location'));
     $listing->set_rent($request->input('rent'));
     $listing->set_description($request->input('description'));
+    dd($request->file('video'));
+
     $time = time();
 
      if ($request->hasFile('video')) {
