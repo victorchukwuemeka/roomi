@@ -3,7 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
-
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
+
 //->middleware(['auth', 'verified'])->name('dashboard');
 
 
@@ -46,9 +48,15 @@ Route::middleware('auth')->group(function () {
 
 });
 
+//this route handles all the blog related activity of the user
+Route::get('blogs',[BlogController::class, 'index'])->name('blogs');
+Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog');
 
+//this route handles the About
+Route::get('about',[PageController::class, 'about'])->name('about');
 
-
+//route contact route
+Route::get('contact', [PageController::class, 'contact'])->name('contact');
 
 
 

@@ -21,9 +21,9 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <!--<link rel="stylesheet" href="https://stackpath.bo
-    otstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">-->
+    
 
+         <script src="https://kit.fontawesome.com/fd683e659d.js" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
 

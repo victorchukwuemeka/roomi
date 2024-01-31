@@ -2,7 +2,6 @@
 @section('content')
 
 
-
 <!-- Hero Section -->
 <section class="bg-white py-12">
     <div class="container mx-auto text-center">
