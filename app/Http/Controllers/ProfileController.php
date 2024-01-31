@@ -65,6 +65,7 @@ class ProfileController extends Controller
         return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
+
     public function added(Request $request, User $user){
       //dd($request);
       $time = time();
