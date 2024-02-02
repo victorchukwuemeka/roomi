@@ -21,7 +21,7 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    
+
 
          <script src="https://kit.fontawesome.com/fd683e659d.js" crossorigin="anonymous"></script>
 
@@ -30,6 +30,16 @@
    
 
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N9K3RD17G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3N9K3RD17G');
+</script>
+
 <body class="font-sans bg-gray-100">
 
   <div id="app">
