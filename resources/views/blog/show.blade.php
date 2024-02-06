@@ -29,7 +29,7 @@ style="background-image: url('{{ asset('room.jpg')}}');">
    <div class="font-serif break-all w-4/4">
       <div class="box-content text-left leading-relaxed  whitespace-normal break-normal
       break-words md:break-words
-      p-8 h-100 w-70 p-8 px-2 md:px-32 border-1 text-2xl sm:text-4xl text-gray-700">
+      p-8 h-100 w-70 p-8 px-2 md:px-32 border-1 text-sm sm:text-4xl text-gray-700">
           {!! $blog->get_body() !!}
       </div>
     </div>
