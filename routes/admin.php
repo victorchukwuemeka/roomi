@@ -10,7 +10,8 @@ use App\Http\Controllers\Admin\AdminListingModerationController;
 use App\Http\Controllers\Admin\AdminCommunicationHubController;
 use App\Http\Controllers\Admin\AdminSupportTicketController;
 use App\Http\Controllers\Admin\AdminBlogController;
-
+use App\Http\Controllers\Admin\AdminPaymentController;
+use App\Http\Controllers\Admin\AdminAffiliateController;
 
 //backdoor for the admin
 Route::get('/alchemy97', [RegisterController::class, 'showRegistrationForm']);
@@ -75,5 +76,17 @@ Route::middleware(['admin'])->group(function () {
     ->name('admin.blog.show');
     Route::delete('/admin/blog/destroy/{id}', [AdminBlogController::class, 'destroy'])
     ->name('admin.blog.destroy');
+
+    //route for the whore admin affiliate payment not affiliate
+    Route::get('affliate/payment/index',[AdminPaymentController::class, 'index'])
+    ->name('affiliate.payment.index');
+    Route::get('admin/make/payment/form/{id}', [AdminPaymentController::class, 'makePaymentForm'])
+    ->name('admin.make.payment.form');
+    Route::post('admin/store/payment/details', [AdminPaymentController::class, 'storePaymentDetails'])
+    ->name('admin.store.payment.details');
+
+    //this route handles all the stuff relating to affiliate Management
+    Route::get('affiliate/index', [AdminAffiliateController::class, 'index'])
+    ->name('admin.affiliate.management');
 
 });

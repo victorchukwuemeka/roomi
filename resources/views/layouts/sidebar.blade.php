@@ -11,8 +11,10 @@
         <a href="{{ route('admin.users.management')}}" class="px-4 py-2 text-white hover:bg-gray-700">Users Management</a>
         <a href="{{ route('admin.listing.moderation')}}" class="px-4 py-2 text-white hover:bg-gray-700">Listing Moderation</a>
         <a href="{{ route('admin.blog.index')}}" class="px-4 py-2 text-white hover:bg-gray-700">Blog</a>
+        <a href="{{ route('admin.affiliate.management')}}" class="px-4 py-2 text-white hover:bg-gray-700">Affiliate Management</a>
         <a href="{{ route('admin.communication.hub')}}" class="px-4 py-2 text-white hover:bg-gray-700">Communication Hub</a>
         <a href="{{ route('admin.support.ticket')}}" class="px-4 py-2 text-white hover:bg-gray-700">Support & Ticket</a>
+
         <a href="#" class="px-4 py-2 text-white hover:bg-gray-700">Settings</a>
         <!-- Add more links as needed -->
     </nav>

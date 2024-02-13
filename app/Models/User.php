@@ -27,6 +27,7 @@ class User extends Authenticatable
         'gender',
         'religion',
         'role',
+        'lead_code',
     ];
 
     /**
@@ -49,15 +50,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function good(){
-      dd('good');
-    }
-
-    public function listing(){
-      return $this->hasMany(Listing::class);
-    }
 
 
+
+    //all the needed attribute
     public function get_id(){
       return $this->attributes['id'];
     }
@@ -74,4 +70,26 @@ class User extends Authenticatable
     public function get_profile_image(){
       return $this->attributes['profile_image'];
     }
+
+    public function set_lead_code($lead_code){
+      $this->attributes['lead_code'] = $lead_code;
+    }
+
+    public function get_lead_code(){
+      return $this->attributes['lead_code'];
+    }
+
+
+    //the relationship between the user and the listing
+    public function listing(){
+      return $this->hasMany(Listing::class);
+    }
+
+    //the relationship between the user and the affiliate
+    public function affiliate()
+    {
+      return $this->hasOne(Affiliate::class);
+    }
+
+
 }

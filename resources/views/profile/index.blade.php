@@ -13,6 +13,7 @@
   @endif
   <div class="text-center space-y-2 sm:text-left">
     <div class="space-y-0.5">
+      
       <p class="text-lg text-black font-semibold">
         {{ $viewData['user']->name }}
       </p>
