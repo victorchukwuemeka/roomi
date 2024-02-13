@@ -43,7 +43,7 @@
 
         <!-- Lead Code (Optional) -->
         <div class="mt-4">
-            <x-input-label for="lead_code" :value="__('Lead Code (Optional)')" />
+            <x-input-label for="lead_code" :value="__('Referral Code (Optional)')" />
             <x-text-input id="lead_code" class="block mt-1 w-full" type="text" name="lead_code"
              :value="old('lead_code')" autocomplete="lead_code" />
             <x-input-error :messages="$errors->get('lead_code')" class="mt-2" />
