@@ -11,7 +11,7 @@
           Join thousands of others who have found compatible roommates on our platform.</p>
         <div class="flex items-center justify-center">
           <form class="" action="{{ route('search') }}" method="get">
-            <input type="search" name="query" class="w-full sm:w-64 p-2 rounded-l-full
+            <input type="search" name="query" class="w-25 sm:w-64 p-2 rounded-l-full
              focus:outline-none mb-2 sm:mb-0" placeholder="Enter Your RoomType Or Location">
              <button type="submit" class="bg-blue-500 text-white rounded-r-full px-4 py-2 focus:outline-none">
                Search Now
