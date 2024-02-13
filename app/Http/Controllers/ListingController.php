@@ -16,7 +16,7 @@ class ListingController extends Controller
     }
 
     public function find(){
-      
+      //total listing
       $listings = Listing::orderBy('created_at', 'desc')->get();
       $viewData = [];
       //$viewData['title'] = "Make A Post";
