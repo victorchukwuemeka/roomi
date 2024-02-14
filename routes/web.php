@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SupportController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,7 +59,7 @@ Route::get('about',[PageController::class, 'about'])->name('about');
 
 //route contact route
 Route::get('contact', [PageController::class, 'contact'])->name('contact');
-
+Route::post('/message/support', [SupportController::class, 'store'])->name('message.support');
 
 
 require __DIR__.'/auth.php';

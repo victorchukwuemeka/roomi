@@ -26,7 +26,7 @@
 
     <hr class="my-6 border-t border-gray-300">
 
-    <form action="{{ url('contact.store') }}" method="POST">
+    <form action="{{ route('message.support') }}" method="POST">
         @csrf
 
         <div class="mb-4">
