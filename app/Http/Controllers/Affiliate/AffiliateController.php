@@ -22,7 +22,7 @@ class AffiliateController extends Controller
     {
       //dd($request);
       $validated = $request->validated();
-      ///dd($validated);
+      //dd($validated);
       $user_id_in_session = Auth::id();
       $affiliate_code = substr(md5(time()), 0, 8);
 

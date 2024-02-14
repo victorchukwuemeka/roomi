@@ -24,7 +24,7 @@ class StoreAffiliateRequest extends FormRequest
         return [
           'Acc_num' => 'required|numeric',
           'location' => 'required|string',
-          'phone_num' => 'required|numeric|digits:10',
+          'phone_num' => ['required', new \App\Rules\ValidPhoneNumber],
           'bank_name' => 'required|string',
         ];
     }
