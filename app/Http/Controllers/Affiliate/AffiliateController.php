@@ -34,7 +34,7 @@ class AffiliateController extends Controller
       $new_affiliate->set_user_id($user_id_in_session);
       $new_affiliate->set_code($affiliate_code);
       $new_affiliate->save();
-      return $this->index();
+      return redirect('affiliate/index');
     }
 
 
