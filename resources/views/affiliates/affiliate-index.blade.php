@@ -19,7 +19,7 @@
           <span class="block text-lg font-semibold mb-2">Your Affiliate Link:</span>
 
           <div class="flex items-center justify-center  rounded-md">
-              <span class="text-gray-700 text-7xl mr-2">{{ $viewData['user_affiliate_code'] }}</span>
+              <span class="text-gray-700 md:text-4xl sm:text-xl lg:text-7xl mr-2">{{ $viewData['user_affiliate_code'] }}</span>
               <button onclick="copyToClipboard('{{ $viewData['user_affiliate_code'] }}')"
                       class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600
                       focus:outline-none focus:ring focus:border-blue-300">
