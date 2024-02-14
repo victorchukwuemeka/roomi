@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Affiliate;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreAffiliateRequest;
 use Illuminate\Http\Request;
 use App\Models\Affiliate;
 use App\Models\Payment;
@@ -17,14 +18,11 @@ class AffiliateController extends Controller
       return view('affiliates.create-affiliate-account');
     }
 
-    public function storeAffiliateData(Request $request)
+    public function storeAffiliateData(StoreAffiliateRequest $request)
     {
-
-      $request->input('bank_name');
-      $request->input('Acc_num');
-      $request->input('location');
-      $request->input('phone_num');
-
+      //dd($request);
+      $validated = $request->validated();
+      ///dd($validated);
       $user_id_in_session = Auth::id();
       $affiliate_code = substr(md5(time()), 0, 8);
 
