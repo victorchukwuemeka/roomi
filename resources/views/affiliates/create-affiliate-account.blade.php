@@ -28,6 +28,17 @@
 
         <div class="mt-6">
             <h2 class="text-2xl font-bold">Ready to create your affiliate account?</h2>
+            @if ($errors->any())
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+              <strong class="font-bold">Error!</strong>
+              <ul class="list-disc pl-5">
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+            @endif
+
 
             {{-- Affiliate Account Form --}}
             <form action="{{ route('store.affiliate.data') }}" method="post" class="mt-4">
