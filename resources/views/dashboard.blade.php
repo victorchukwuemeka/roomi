@@ -9,6 +9,9 @@
         <h1 class="text-4xl text-gray-800 font-semibold">Find Your Perfect Roommate</h1>
         <p class="text-xl text-gray-600 mt-4">Your ideal co-living experience starts here.
           Join thousands of others who have found compatible roommates on our platform.</p>
+          <p class="block text-xl text-gray-900 font-semibold lg:hidden">
+            Use The Menu Bar To Find A Room Or Post The Video Of Your Room
+          </p>
         <div class="flex items-center justify-center">
           <form class="" action="{{ route('search') }}" method="get">
             <input type="search" name="query" class="w-25 sm:w-64 p-2 rounded-l-full
