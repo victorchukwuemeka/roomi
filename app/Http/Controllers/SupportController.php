@@ -9,7 +9,7 @@ class SupportController extends Controller
 {
     public function store(Request $request)
     {
-      //the message goes to the admin dashboard for support 
+      //the message goes to the admin dashboard for support
       $validated = $request->validate([
        'name' => 'required|max:255',
        'email'=> 'required',
