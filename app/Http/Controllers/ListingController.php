@@ -30,6 +30,13 @@ class ListingController extends Controller
     ini_set('max_execution_time', 300);
     //dd($request->all());
     //Listing::validate($request);
+    $validated = $request->validate([
+      'title'       => 'required|string|max:255',
+      'location'    => 'required|string|max:255',
+      'rent'        => 'required|numeric|min:0',
+      'description' => 'required|string',
+    ]);
+
     $listing  = new Listing();
     $user_id = $user_id_in_session = Auth::id();
     if (!$user_id || $user_id == false) {
