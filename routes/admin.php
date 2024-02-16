@@ -86,7 +86,7 @@ Route::middleware(['admin'])->group(function () {
     ->name('admin.store.payment.details');
 
     //this route handles all the stuff relating to affiliate Management
-    Route::get('affiliate/index', [AdminAffiliateController::class, 'index'])
+    Route::get('admin/affiliate/index', [AdminAffiliateController::class, 'index'])
     ->name('admin.affiliate.management');
 
 });
