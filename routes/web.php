@@ -50,6 +50,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
+
 //this route handles all the blog related activity of the user
 Route::get('blogs',[BlogController::class, 'index'])->name('blogs');
 Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog');

@@ -43,7 +43,4 @@ class Support extends Model
       return $this->attributes['message'];
     }
 
-
-
-
 }

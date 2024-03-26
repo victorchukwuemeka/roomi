@@ -15,10 +15,12 @@ class SupportController extends Controller
        'email'=> 'required',
        'message' => 'required',
       ]);
+      
       $new_support = new Support();
       $new_support->set_name($request->input('name'));
       $new_support->set_email($request->input('email'));
       $new_support->set_message($request->input('message'));
+
       $new_support->save();
      return redirect('contact');
     }

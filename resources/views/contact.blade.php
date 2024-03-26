@@ -24,6 +24,7 @@
         </a></span>
     </div>
 
+
     <hr class="my-6 border-t border-gray-300">
 
     <form action="{{ route('message.support') }}" method="POST">
