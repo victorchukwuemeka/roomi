@@ -26,16 +26,15 @@ style="background-image: url('{{ asset('room.jpg')}}');">
         <i class="fab fa-whatsapp"></i>
     </a>
   </div>
-   <div class="font-serif break-all w-4/4">
-      <div class="box-content text-left leading-relaxed  whitespace-normal break-normal
-      break-words md:break-words
-      p-8 h-100 w-70 p-8 px-2 md:px-32 border-1 text-sm sm:text-4xl text-gray-700">
-          {!! $blog->get_body() !!}
-      </div>
+  <div class="font-serif break-all w-full">
+    <div class="box-content text-left leading-relaxed whitespace-normal break-normal break-words
+         p-2 sm:p-4 md:p-8 md:px-32
+         h-auto md:h-100 w-full md:w-70
+         border text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-700">
+        {!! $blog->get_body() !!}
     </div>
-  <div class="flex-1">
-    {{ __('recent post')}}
-  </div>
+</div>
+
 </div>
 
 </div>
