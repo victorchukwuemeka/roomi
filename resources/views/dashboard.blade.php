@@ -59,7 +59,7 @@
         @foreach($viewData['listings'] as $listing)
         <div class="bg-white p-4 shadow-lg rounded-lg">
             <div class="relative overflow-hidden rounded-t-lg">
-                <video width="100%" class="object-cover rounded-t-lg" controls>
+                <video width="100%" height="100%" class="object-cover rounded-t-lg" controls>
                     <source src="{{ asset('storage/' .$listing->get_video()) }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
