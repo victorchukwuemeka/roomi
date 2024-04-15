@@ -19,9 +19,7 @@ use App\Http\Controllers\SupportController;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/',[PageController::class,'rooms']);
 
 Route::get('/hhh', [MessageController::class, 'hhh']);
 
@@ -30,9 +28,7 @@ Route::get('/profileo', function(){
   return view('profile');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard', [PageController::class,'rooms']);
 
 
 //->middleware(['auth', 'verified'])->name('dashboard');
