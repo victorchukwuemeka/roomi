@@ -28,7 +28,7 @@ Route::get('/profileo', function(){
   return view('profile');
 });
 
-Route::get('/dashboard', [PageController::class,'rooms']);
+Route::get('/dashboard', [PageController::class,'home']);
 
 
 //->middleware(['auth', 'verified'])->name('dashboard');

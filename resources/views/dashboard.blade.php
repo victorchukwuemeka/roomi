@@ -52,45 +52,74 @@
 </section>
 
 <div class="container mx-auto p-4">
+  <div class="md:flex md:justify-between md:items-center mb-4">
+        <h2 class="text-3xl font-bold mb-4 md:mb-0">{{__('Rooms Listed')}}</h2>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         @foreach($viewData['listings'] as $listing)
-            <div class="bg-white p-4 shadow-lg rounded-lg">
-              <video width="320" height="240" class="w-full h-48 object-cover rounded-t-lg" controls>
-                <source src="{{ asset('storage/' .$listing->get_video()) }}" type="video/mp4">
-              </video>
-                <div class="p-4">
-                    <h2 class="text-xl font-semibold">
-                      {{ $listing->get_title() }}
-                    </h2>
-                    <p class="text-gray-600 text-sm mt-2">
-                      {{ $listing->get_description() }}
-                    </p>
-                    <div class="mt-2 flex justify-between items-center">
-                        <p class="text-gray-700 font-semibold text-lg">
-                          {{ $listing->get_rent() }}
-                        </p>
-                        <p class="text-gray-700 font-semibold text-lg">
-                          {{ $listing->get_location() }}
-                        </p>
-                        <div class="flex items-center">
-                          <a href="{{ url('/profile/'.$listing->get_user_id())}}">
-                            @if($listing->user->profile_image)
-                            <img src="{{ asset('/storage/'.$listing->user->profile_image) }}" alt="User's Profile Picture"
-                            class="w-8 h-8 rounded-full">
-                            @else
-                            <img src="{{ asset('pig.jpg') }}" alt="User's Profile Picture"
-                            class="w-8 h-8 rounded-full">
-                            @endif
-                          </a>
-                            <p class="text-sm text-gray-700 ml-2">
-                              {{ $listing->user->name }}
-                            </p>
-                        </div>
-                    </div>
+        <div class="bg-white p-4 shadow-lg rounded-lg">
+            <div class="relative overflow-hidden rounded-t-lg">
+                <video width="100%" class="object-cover rounded-t-lg" controls>
+                    <source src="{{ asset('storage/' .$listing->get_video()) }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="p-4">
+                <h2 class="text-xl font-semibold mb-2">{{ $listing->get_title() }}</h2>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">{{ $listing->get_description() }}</p>
+                <div class="flex justify-between items-center">
+                    <p class="text-gray-700 font-semibold text-lg">{{ $listing->get_rent() }}</p>
+                    <p class="text-gray-700 font-semibold text-lg">{{ $listing->get_location() }}</p>
+                </div>
+                <div class="flex items-center mt-4">
+                    <a href="{{ url('/profile/'.$listing->get_user_id()) }}" class="flex items-center">
+                        @if($listing->user->profile_image)
+                        <img src="{{ asset('/storage/'.$listing->user->profile_image) }}" alt="User's Profile Picture" class="w-8 h-8 rounded-full">
+                        @else
+                        <img src="{{ asset('pig.jpg') }}" alt="User's Profile Picture" class="w-8 h-8 rounded-full">
+                        @endif
+                        <p class="text-sm text-gray-700 ml-2">{{ $listing->user->name }}</p>
+                    </a>
                 </div>
             </div>
+        </div>
         @endforeach
     </div>
 </div>
+
+    <br>
+
+        <section class="py-10 px-5  sm:py-10">
+            <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <h2 class="text-3xl font-bold mb-6">{{__('Articles On Getting a Roommate')}}</h2>
+                @foreach($viewData['blogs'] as $article)
+                <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                    <img src="{{ asset('home.jpg') }}" alt="Article 1" class="w-full h-48 object-cover object-center">
+                    <div class="p-4">
+                        <h2 class="text-lg font-semibold mb-2">{{ $article->get_title() }}</h2>
+                        <div class="truncate">
+                          <p class="text-gray-600 text-sm ">
+                            @php
+                             $body = $article->get_body();
+                             $lent = strlen($body);
+                             if($lent > 200){
+                               $body = substr($body, 0, 200);
+                             }else{
+                               $body;
+                             }
+                            @endphp
+                            {!! $body !!}
+                          </p>
+                        </div>
+
+                        <a href="{{ url('/blog/'.$article->get_id()) }}"
+                          class="block mt-2 text-blue-500 hover:underline text-sm">
+                          Read More
+                        </a>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </section>
 
 @endsection

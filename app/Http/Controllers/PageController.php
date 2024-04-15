@@ -4,16 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Listing;
+use App\Models\Blog;
 
 class PageController extends Controller
 {
    // this function shows the home paga listing of roooms
-    public function rooms()
+    public function home()
     {
-      $listings = Listing::orderBy('created_at', 'desc')->get();
-    //dd($listings);
       $viewData = [];
-      $viewData['listings'] = $listings;
+      $viewData['listings'] = Listing::orderBy('created_at', 'desc')->get();
+      $viewData['blogs'] = Blog::all();
       return view('dashboard')->with('viewData', $viewData);
     }
 
