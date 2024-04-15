@@ -19,7 +19,6 @@ class ListingController extends Controller
       //total listing
       $listings = Listing::orderBy('created_at', 'desc')->get();
       $viewData = [];
-      //$viewData['title'] = "Make A Post";
       $viewData['listings'] = $listings;
       return view('listing.find')->with('viewData', $viewData);
     }
@@ -52,7 +51,7 @@ class ListingController extends Controller
     $time = time();
 
      if ($request->hasFile('video')) {
-              //dd('vic');
+              ///dd('vic');
               $video_file_name = $time.".".$request->file('video')->extension();
               Storage::disk('public')->put(
                 $video_file_name, file_get_contents($request->file('video')->getRealPath())
