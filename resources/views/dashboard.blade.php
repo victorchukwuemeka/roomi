@@ -51,7 +51,7 @@
     </div>
 </section>
 
-<div class="container mx-auto p-4">
+<div class="mx-auto p-4">
         <h2 class="text-3xl font-bold text-center mb-4 md:mb-0">
           {{__('Rooms Listed')}}
         </h2>
@@ -93,7 +93,7 @@
                  <h2 class="text-3xl text-center xl:text-center font-bold mb-6">
                    {{__('Articles On Getting a Roommate')}}
                  </h2>
-            <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                 @foreach($viewData['blogs'] as $article)
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                     <img src="{{ asset('home.jpg') }}" alt="Article 1" class="w-full h-48 object-cover object-center">
