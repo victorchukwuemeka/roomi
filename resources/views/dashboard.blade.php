@@ -52,9 +52,9 @@
 </section>
 
 <div class="container mx-auto p-4">
-  <div class="md:flex md:justify-between md:items-center mb-4">
-        <h2 class="text-3xl font-bold mb-4 md:mb-0">{{__('Rooms Listed')}}</h2>
-    </div>
+        <h2 class="text-3xl font-bold text-center mb-4 md:mb-0">
+          {{__('Rooms Listed')}}
+        </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         @foreach($viewData['listings'] as $listing)
         <div class="bg-white p-4 shadow-lg rounded-lg">
@@ -90,8 +90,10 @@
     <br>
 
         <section class="py-10 px-5  sm:py-10">
+                 <h2 class="text-3xl text-center xl:text-center font-bold mb-6">
+                   {{__('Articles On Getting a Roommate')}}
+                 </h2>
             <div class="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                <h2 class="text-3xl font-bold mb-6">{{__('Articles On Getting a Roommate')}}</h2>
                 @foreach($viewData['blogs'] as $article)
                 <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                     <img src="{{ asset('home.jpg') }}" alt="Article 1" class="w-full h-48 object-cover object-center">
