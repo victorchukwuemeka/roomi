@@ -6,7 +6,7 @@
     <title>@yield('title', 'Ruumi Dashboard')</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+   
 
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
