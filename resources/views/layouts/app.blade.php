@@ -28,7 +28,8 @@
     <!-- Scripts -->
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052314394083667"
+     crossorigin="anonymous"></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3N9K3RD17G"></script>
