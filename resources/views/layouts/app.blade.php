@@ -27,7 +27,7 @@
 
     <!-- Scripts -->
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+  
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052314394083667"
      crossorigin="anonymous"></script>
 </head>
