@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+   <meta name="google-adsense-account" content="ca-pub-3052314394083667">
     <link rel="stylesheet" href="{{ asset('/css/trix.css') }}">
 
     @vite('resources/css/app.css')
@@ -27,7 +27,7 @@
 
     <!-- Scripts -->
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+   
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052314394083667"
      crossorigin="anonymous"></script>
 </head>
