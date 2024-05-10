@@ -27,12 +27,17 @@
 
     <!-- Scripts -->
 
+<<<<<<< HEAD
    
+=======
+  
+>>>>>>> 0b67ee62a6e7e0e99e5cca64c64037add8198fba
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052314394083667"
      crossorigin="anonymous"></script>
 </head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N9K3RD17G"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N9K3RD17G">
+</script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -41,6 +46,9 @@
   gtag('config', 'G-3N9K3RD17G');
 </script>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052314394083667"
+     crossorigin="anonymous"></script>
+     
 <body class="font-sans bg-gray-100">
 
   <div id="app">

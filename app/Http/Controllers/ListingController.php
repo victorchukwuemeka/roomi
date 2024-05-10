@@ -50,16 +50,39 @@ class ListingController extends Controller
 
     $time = time();
 
+      //validate if the request have have the video file
      if ($request->hasFile('video')) {
-              ///dd('vic');
-              $video_file_name = $time.".".$request->file('video')->extension();
-              Storage::disk('public')->put(
-                $video_file_name, file_get_contents($request->file('video')->getRealPath())
-              );
+              
+              //compressing and resizing the video with cloudinary
+              $compressed_video = cloudinary()->uploadVideo(
+                $request->file('video')->getRealPath(),
+                [
+                  "folder" => "uploads",
+                  "transformation" => [
+                    'width' => 320,
+                    'height' => 200,
+                    'fetch_format' => 'auto',
+                  ]
+                ]
+              )->getSecurePath();
+
+              //using the compressed file 
+              if ($compressed_video) {
+                $video_file_name = $time.".".$request->file('video')->extension();
+                Storage::disk('public')->put(
+                  $video_file_name, file_get_contents($compressed_video)
+                );
+              }else {
+                //using the default file 
+                $video_file_name = $time.".".$request->file('video')->extension();
+                Storage::disk('public')->put(
+                  $video_file_name, file_get_contents($request->file('video')->getRealPath())
+                );
+              }
+              
               $listing->set_video($video_file_name);
               $listing->save();
       }
-
       return redirect('/dashboard');
     }
 

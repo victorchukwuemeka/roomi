@@ -21,7 +21,7 @@ use App\Http\Controllers\SupportController;
 
 Route::get('/',[PageController::class,'home']);
 
-Route::get('/hhh', [MessageController::class, 'hhh']);
+//Route::get('/hhh', [MessageController::class, 'hhh']);
 
 
 Route::get('/profileo', function(){
