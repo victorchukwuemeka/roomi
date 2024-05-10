@@ -27,11 +27,6 @@
 
     <!-- Scripts -->
 
-<<<<<<< HEAD
-   
-=======
-  
->>>>>>> 0b67ee62a6e7e0e99e5cca64c64037add8198fba
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3052314394083667"
      crossorigin="anonymous"></script>
 </head>
